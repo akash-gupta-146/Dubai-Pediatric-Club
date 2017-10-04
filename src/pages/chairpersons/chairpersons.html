@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        <ion-title>Chairpersons</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="content-background">
+    <ion-card *ngFor="let speaker of speakersList">
+        <button full ion-item no-lines (click)="viewSpeaker(speaker)">
+            <ion-thumbnail item-start>
+                <img [src]="speaker.image">
+            </ion-thumbnail>
+            <h2>{{ speaker.name }}</h2>
+            <p><b>{{ speaker.designation }}</b></p>
+            <p>{{ speaker.venue }}</p>
+        </button>
+    </ion-card>
+</ion-content>

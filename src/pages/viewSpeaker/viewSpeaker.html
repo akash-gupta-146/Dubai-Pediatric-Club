@@ -1,0 +1,26 @@
+<ion-header>
+        <ion-navbar>
+            <ion-title>{{ speaker.type }}</ion-title>
+        </ion-navbar>
+    </ion-header>
+    
+    <ion-content class="content-background">
+        <img width="100%" [src]="speaker.image">
+        <ion-list>
+            <ion-item>
+                <ion-icon name="person" item-left color="color1"></ion-icon>
+                Name
+                <b item-right>{{ speaker.name }}</b>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="bowtie" item-left color="color2"></ion-icon>
+                Designation
+                <b item-right>{{ speaker.designation }}</b>
+            </ion-item>
+            <ion-item *ngIf="speaker.venue">
+                <ion-icon name="podium" item-left color="color3"></ion-icon>
+                Venue
+                <b item-right>{{ speaker.venue }}</b>
+            </ion-item>            
+        </ion-list>
+    </ion-content>

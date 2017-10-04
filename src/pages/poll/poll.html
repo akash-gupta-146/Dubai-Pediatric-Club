@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Poll</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="background-pattern">
+    <ion-card padding *ngFor="let poll of polls">
+        <ion-card-header class="colorPrimary">
+            <b>{{ poll.question }}</b>
+        </ion-card-header>
+        <ion-list radio-group>
+
+            <ion-item *ngIf="poll.option1">
+                <ion-label>{{ poll.option1 }}</ion-label>
+                <ion-radio value="go"></ion-radio>
+            </ion-item>
+
+            <ion-item *ngIf="poll.option2">
+                <ion-label>{{ poll.option2 }}</ion-label>
+                <ion-radio value="rust"></ion-radio>
+            </ion-item>
+
+            <ion-item *ngIf="poll.option3">
+                <ion-label>{{ poll.option3 }}</ion-label>
+                <ion-radio value="python"></ion-radio>
+            </ion-item>
+
+            <ion-item *ngIf="poll.option4">
+                <ion-label>{{ poll.option4 }}</ion-label>
+                <ion-radio value="SOME"></ion-radio>
+            </ion-item>
+        </ion-list>
+        <button ion-button full>Submit</button>
+    </ion-card>
+</ion-content>
